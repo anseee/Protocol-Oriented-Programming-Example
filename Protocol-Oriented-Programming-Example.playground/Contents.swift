@@ -13,7 +13,6 @@ struct FlappyBird: Bird, Flyable {
     let name: String
     let flappyAmplitude: Double
     let flappyFrequency: Double
-    let canFly: Bool
     
     var airspeedVelocity: Double {
         return 3 * flappyFrequency * flappyAmplitude
@@ -30,8 +29,11 @@ struct Penguin: Bird {
 struct SwiftBird: Bird, Flyable {
     var name: String { return "Swift \(version)" }
     let version: Double
-    let canFly = true
     
     //Swift is fast
     var airspeedVelocity: Double { return 2000.0 }
+}
+
+extension Bird where Self:Flyable {
+    var canFly: Bool { return true }
 }
