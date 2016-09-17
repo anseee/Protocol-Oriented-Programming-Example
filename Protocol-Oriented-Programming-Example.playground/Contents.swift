@@ -5,7 +5,6 @@ protocol Bird {
     var canFly: Bool { get }
 }
 
-// 비행할 수 있는.
 protocol Flyable {
     var airspeedVelocity: Double { get }
 }
@@ -19,4 +18,20 @@ struct FlappyBird: Bird, Flyable {
     var airspeedVelocity: Double {
         return 3 * flappyFrequency * flappyAmplitude
     }
+}
+
+//Make Penguin
+struct Penguin: Bird {
+    let name:String
+    let canFly = false
+}
+
+//Make Swift Bird
+struct SwiftBird: Bird, Flyable {
+    var name: String { return "Swift \(version)" }
+    let version: Double
+    let canFly = true
+    
+    //Swift is fast
+    var airspeedVelocity: Double { return 2000.0 }
 }
