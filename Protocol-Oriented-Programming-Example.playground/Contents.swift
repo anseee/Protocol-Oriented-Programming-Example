@@ -37,3 +37,31 @@ struct SwiftBird: Bird, Flyable {
 extension Bird where Self:Flyable {
     var canFly: Bool { return true }
 }
+
+enum UnladenSwallow: Bird, Flyable {
+    case African
+    case European
+    case Unknown
+    
+    var name: String {
+        switch self {
+        case .African:
+            return "African"
+        case .European:
+            return "European"
+        case .Unknown:
+            return "What do you mean? African or European?"
+        }
+    }
+    
+    var airspeedVelocity: Double {
+        switch self {
+        case .African:
+            return 10.0
+        case .European:
+            return 9.9
+        case .Unknown:
+            fatalError ("What do you mean? African or European?")
+        }
+    }
+}
