@@ -65,3 +65,37 @@ enum UnladenSwallow: Bird, Flyable {
         }
     }
 }
+
+extension Collection {
+    func skip(skip: Int) -> [Generator.Element] {
+        guard skip != 0 else {
+            return []
+        }
+        
+        var index = self.startIndex
+        var result: [Generator.Element] = []
+        var i = 0
+        
+        repeat {
+            if i % skip == 0 {
+                result.append(self[index])
+            }
+            
+            index = self.index(after: index)
+            i += 1
+            
+        } while index != self.endIndex
+        
+        return result
+    }
+}
+
+let bunchaBirds: [Bird] =
+    [UnladenSwallow.African,
+     UnladenSwallow.European,
+     UnladenSwallow.Unknown,
+     Penguin(name: "King Penguin"),
+     SwiftBird(version: 3.0),
+     FlappyBird(name: "Felipe", flappyAmplitude: 3.0, flappyFrequency: 20.0)]
+
+bunchaBirds.skip(skip: 3)
