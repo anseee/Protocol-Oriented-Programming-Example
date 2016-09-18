@@ -99,3 +99,9 @@ let bunchaBirds: [Bird] =
      FlappyBird(name: "Felipe", flappyAmplitude: 3.0, flappyFrequency: 20.0)]
 
 bunchaBirds.skip(skip: 3)
+
+if UnladenSwallow.African.canFly {
+    print("I can fly!")
+} else {
+    print("Guess I'll just sit here :[")
+}
