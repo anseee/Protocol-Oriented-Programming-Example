@@ -12,3 +12,4 @@ Sungwon park이 Protocol Oriented Programming을 이해하기 위해 만든 예�
 ## 2016. 10. 13 
 Gitflow 사용하는중
 긴급 수정
+수정했음.
